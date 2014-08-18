@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Instagram</title>
+  </head>
+  <body>
+    <% if @posts.any? %>
+      <% @posts.each do |post| %>
+        <%= post.title %>
+        <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+      <% end %>
+    <% else %>
+      <h3>No posts yet</h3>
+    <% end %>
+    <%= link_to 'Add Post', new_post_path %>
+  </body>
+</html>
