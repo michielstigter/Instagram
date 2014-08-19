@@ -8,6 +8,8 @@
       <%= f.text_field :title %>
       <%= f.label :picture %>
       <%= f.file_field :picture %>
+      <%= f.label :tag_list, "Tags" %>
+      <%= f.text_field :tag_list %>
       <%= f.submit 'Create Post' %>
     <% end %>
   </body>
