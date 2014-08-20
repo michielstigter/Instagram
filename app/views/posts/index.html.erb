@@ -32,13 +32,7 @@
       </div>
     </header>
     <% if @posts.any? %>
-      <% @posts.each do |post| %>
-        <h2><%= post.title %></h2>
-        <%=link_to image_tag(post.picture.url(:thumb)), post.picture.url(:medium), :popup=>['original_image', 'height=700,width=900'],class: 'uploaded-pic' %>
-        <% post.tags.each do |tag| %>
-          <li><%= link_to tag.text, '#' %></li>
-        <% end %>
-      <% end %>
+      <%= render @posts %>
     <% else %>
       <h3>No posts yet</h3>
     <% end %>
